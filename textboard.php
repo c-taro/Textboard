@@ -1,19 +1,19 @@
 <html>
 <head>
-<title>ƒvƒƒOƒ‰ƒ~ƒ“ƒOƒuƒƒO</title>
+<title>ãƒ—ãƒ­ã‚°ãƒ©ãƒŸãƒ³ã‚°ãƒ–ãƒ­ã‚°</title>
 </head>
 <body>
-<h1>ƒvƒƒOƒ‰ƒ~ƒ“ƒOƒuƒƒO</h1>
+<h1>ãƒ—ãƒ­ã‚°ãƒ©ãƒŸãƒ³ã‚°ãƒ–ãƒ­ã‚°</h1>
 
 <?php
-//•ÒWˆË—Š‚³‚ê‚½
+//æŠ•ç¨¿ã‚’ç·¨é›†ã—ãŸã„æ™‚
 if ($_POST['edit1']){
 
-	//ã‘‚«‚³‚ê‚½ƒeƒLƒXƒgƒtƒ@ƒCƒ‹‚ğŒÄ‚Ño‚·
+	//ä¸Šæ›¸ãã•ã‚ŒãŸãƒ†ã‚­ã‚¹ãƒˆãƒ•ã‚¡ã‚¤ãƒ«ã‚’å‘¼ã³å‡ºã™
 	$filename3 = 'file.txt';
 	$file3 = file($filename3);
 
-	//íœ‚µ‚½‚¢“Še‚ÌƒpƒXƒ[ƒhicolumn3[4]j‚ğæ“¾
+	//å‰Šé™¤ã—ãŸã„æŠ•ç¨¿ã®ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ï¼ˆcolumn3[4]ï¼‰ã‚’å–å¾—
 	foreach($file3 as $array3){
 		$column3 = explode("<>",$array3);
 
@@ -22,33 +22,33 @@ if ($_POST['edit1']){
 		}
 	}
 
-	//Šm”F—pƒpƒXƒ[ƒh‚ª•ÒW‚µ‚½‚¢“Še‚ÌƒpƒXƒ[ƒhicolumn3[4]j‚Æˆê’v‚µ‚½ê‡
+	//ç¢ºèªç”¨ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ãŒç·¨é›†ã—ãŸã„æŠ•ç¨¿ã®ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ï¼ˆcolumn3[4]ï¼‰ã¨ä¸€è‡´ã—ãŸå ´åˆ
 	if(trim($_POST['edit_password1']) === trim($column3[4])){
 		$edittext3 = $column3;
 
-		$edit_mode3 = 1;//“ü—ÍƒtƒH[ƒ€‚ğ•ÒWƒ‚[ƒh‚É‚·‚é
-		$edit_num3 = $_POST['edit1'];//•ÒW‚µ‚½‚¢“Še‚Ì“Še”Ô†
+		$edit_mode3 = 1;//å…¥åŠ›ãƒ•ã‚©ãƒ¼ãƒ ã‚’ç·¨é›†ãƒ¢ãƒ¼ãƒ‰ã«ã™ã‚‹
+		$edit_num3 = $_POST['edit1'];//ç·¨é›†ã—ãŸã„æŠ•ç¨¿ã®æŠ•ç¨¿ç•ªå·
 
 	}else{
-		$error = 1;//ƒtƒH[ƒ€‚Ì‰º‚Éu!!ƒpƒXƒ[ƒh‚ªˆê’v‚µ‚Ü‚¹‚ñ!!v‚Æ•\¦‚³‚¹‚é‚½‚ß‚Ìˆ—
+		$error = 1;//ãƒ•ã‚©ãƒ¼ãƒ ã®ä¸‹ã«ã€Œ!!ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ãŒä¸€è‡´ã—ã¾ã›ã‚“!!ã€ã¨è¡¨ç¤ºã•ã›ã‚‹ãŸã‚ã®å‡¦ç†
 	}
 }
 ?>
 
-<!--“ü—ÍƒtƒH[ƒ€-->
+<!--å…¥åŠ›ãƒ•ã‚©ãƒ¼ãƒ -->
 <form method="post" action="textboard.php">
 	
-	¦‹L†u<>v‚Íg—p‚µ‚È‚¢‚Å‚­‚¾‚³‚¢B<br/><br/>
-	–¼‘OF<br/>
+	â€»è¨˜å·ã€Œ<>ã€ã¯ä½¿ç”¨ã—ãªã„ã§ãã ã•ã„ã€‚<br/><br/>
+	åå‰ï¼š<br/>
         <input type="name" name="name0" value="<?= $edittext3[1] ?>"><br/>
-	ƒRƒƒ“ƒgF<br/>
+	ã‚³ãƒ¡ãƒ³ãƒˆï¼š<br/>
         <textarea cols="40" rows="10" name="comment0"><?= $edittext3[2] ?></textarea><br/>
-	ƒpƒXƒ[ƒhF<br/>
+	ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ï¼š<br/>
 	<input type="name" name="password0" value="<?= $edittext3[4] ?>"><br/><br/>
-	<input type="submit" name="send0" value="‘—M"><br/><br/><br/>
+	<input type="submit" name="send0" value="é€ä¿¡"><br/><br/><br/>
 
-	<input type="submit" name="delete0" value="“Še‚ğíœ"><br/><br/>
-	<input type="submit" name="edit0" value="“Še‚ğ•ÒW">
+	<input type="submit" name="delete0" value="æŠ•ç¨¿ã‚’å‰Šé™¤"><br/><br/>
+	<input type="submit" name="edit0" value="æŠ•ç¨¿ã‚’ç·¨é›†">
 
 	<input type="hidden" name="edit_mode0" value="<?= $edit_mode3 ?>">
 	<input type="hidden" name="edit_num0" value="<?= $edit_num3 ?>">
@@ -59,151 +59,175 @@ if ($_POST['edit1']){
 <?php
 
 if ($_POST['edit_mode0'] != 1){
-	//–¼‘O‚ÆƒRƒƒ“ƒg‚ª‘‚«‚Ü‚ê‚½ê‡‚ÌAƒeƒLƒXƒgƒtƒ@ƒCƒ‹‚É‘‚«‚Şˆ— V‹K“Še
+
+	//åå‰ã¨ã‚³ãƒ¡ãƒ³ãƒˆãŒæ›¸ãè¾¼ã¾ã‚ŒãŸå ´åˆã®ã€ãƒ†ã‚­ã‚¹ãƒˆãƒ•ã‚¡ã‚¤ãƒ«ã«æ›¸ãè¾¼ã‚€å‡¦ç† æ–°è¦æŠ•ç¨¿
 	if ($_POST['name0'] && $_POST['comment0'] && $_POST['password0'] && $_POST['send0']){
 
-		//ƒeƒLƒXƒgƒtƒ@ƒCƒ‹‚ğŒÄ‚Ño‚·
+		//ãƒ†ã‚­ã‚¹ãƒˆãƒ•ã‚¡ã‚¤ãƒ«ã‚’å‘¼ã³å‡ºã™
 		$filename1 = 'file.txt';
 		$fp1 = fopen($filename1, 'a');
 
-		//“Še”Ô†‚Ìİ’è
+		//æŠ•ç¨¿ç•ªå·ã®è¨­å®š
 		$file1 = file($filename1);
 		$turn1 = count($file1);
 
-		//–¼‘O‚Ìİ’è
+		//åå‰ã®è¨­å®š
 		$name1 = $_POST['name0'];
 
-		//ƒRƒƒ“ƒg‚Ìİ’è
+		//ã‚³ãƒ¡ãƒ³ãƒˆã®è¨­å®š
 		$comment1 = $_POST['comment0'];
 
-		//“ŠeŠÔ‚Ìİ’è
+		//æŠ•ç¨¿æ™‚é–“ã®è¨­å®š
 		$time1 = date("Y/m/d H:i:s");
 
-		//ƒpƒXƒ[ƒh‚Ìİ’è
+		//ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã®è¨­å®š
 		$password1 = $_POST['password0'];
 
-		//•\¦Œ`®‚Ìİ’è
+		//è¡¨ç¤ºå½¢å¼ã®è¨­å®š
 		$column1 = array($turn1+1, $name1, $comment1, $time1, $password1);
 
-		//ƒeƒLƒXƒgƒtƒ@ƒCƒ‹‚É‘‚«‚İ
+		//ãƒ†ã‚­ã‚¹ãƒˆãƒ•ã‚¡ã‚¤ãƒ«ã«æ›¸ãè¾¼ã¿
 		fwrite($fp1, $column1[0]."<>".$column1[1]."<>".$column1[2]."<>".$column1[3]."<>".$column1[4]."<>\n");
 
 		fclose($fp1);
 
 	}elseif($_POST['delete0']){
 ?>
-		<!--“ü—ÍƒtƒH[ƒ€-->
+		<!--å…¥åŠ›ãƒ•ã‚©ãƒ¼ãƒ -->
 		<form method="post" action="textboard.php">
-		íœ‚µ‚½‚¢“Še‚Ì“Še”Ô†F<br/>
+		å‰Šé™¤ã—ãŸã„æŠ•ç¨¿ã®æŠ•ç¨¿ç•ªå·ï¼š<br/>
 		<input type="name" name="delete1"><br/>
-		íœ‚µ‚½‚¢“Še‚ÌƒpƒXƒ[ƒhF<br/>
+		å‰Šé™¤ã—ãŸã„æŠ•ç¨¿ã®ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ï¼š<br/>
 		<input type="name" name="delete_password1"><br/><br/>
-		<input type="submit" value="‘—M"><br/>
+		<input type="submit" value="é€ä¿¡"><br/>
 		</form>
 <?php
 	
 	}elseif($_POST['edit0']){
 ?>
-		<!--“ü—ÍƒtƒH[ƒ€-->
+		<!--å…¥åŠ›ãƒ•ã‚©ãƒ¼ãƒ -->
 		<form method="post" action="textboard.php">
-		•ÒW‚µ‚½‚¢“Še‚Ì“Še”Ô†F<br/>
+		ç·¨é›†ã—ãŸã„æŠ•ç¨¿ã®æŠ•ç¨¿ç•ªå·ï¼š<br/>
 		<input type="name" name="edit1"><br/>
-		•ÒW‚µ‚½‚¢“Še‚ÌƒpƒXƒ[ƒhF<br/>
+		ç·¨é›†ã—ãŸã„æŠ•ç¨¿ã®ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ï¼š<br/>
 		<input type="name" name="edit_password1"><br/><br/>
-		<input type="submit" value="‘—M"><br/>
+		<input type="submit" value="é€ä¿¡"><br/>
 		</form>
 <?php
+	}elseif($_POST['send0']){
+		echo "!!æœªå…¥åŠ›ã§ã™!!";
 	}
 }
 
 
-
-//íœˆË—Š‚³‚ê‚½
+//æŠ•ç¨¿ã‚’å‰Šé™¤ã—ãŸã„æ™‚ã®ã€ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã®ç¢ºèªã¨å‰Šé™¤ã™ã‚‹ã‹ã®ç¢ºèª
 if ($_POST['delete1'] && $_POST['delete_password1']){
 
-	//ã‘‚«‚³‚ê‚½ƒeƒLƒXƒgƒtƒ@ƒCƒ‹‚ğŒÄ‚Ño‚·
+	$delete2 = $_POST['delete1'];
+	$delete_password2 = $_POST['delete_password1'];
+
+	//ä¸Šæ›¸ãã•ã‚ŒãŸãƒ†ã‚­ã‚¹ãƒˆãƒ•ã‚¡ã‚¤ãƒ«ã‚’å‘¼ã³å‡ºã™
 	$filename2 = 'file.txt';
 	$file2 = file($filename2);
 
-	//íœ‚µ‚½‚¢“Še‚ÌƒpƒXƒ[ƒhipre_column2[4]j‚ğæ“¾
+	//å‰Šé™¤ã—ãŸã„æŠ•ç¨¿ï¼ˆpre_column2ï¼‰ã‚’å–å¾—
 	foreach($file2 as $pre_array2){
 		$pre_column2 = explode("<>",$pre_array2);
 		if($pre_column2[0] == $_POST['delete1']){
-			$check2 = $pre_column2[4];
+			$check2 = $pre_column2;
 		}
 	}
 
-	//Šm”F—pƒpƒXƒ[ƒh‚ªíœ‚µ‚½‚¢“Še‚ÌƒpƒXƒ[ƒh‚Æˆê’v‚µ‚½ê‡
-	if(trim($_POST['delete_password1']) === trim($check2)){
-		//íœw’è‚³‚ê‚½“Še‚¾‚¯”²‚¢‚Äƒtƒ@ƒCƒ‹‚ğÄ•Û‘¶
-		$fp2 = fopen($filename2, 'w');
-		$turn2=1;//“Še”Ô†
-		foreach($file2 as $key2 => $array2){
-			$column2 = explode("<>", $array2);
-			if ($_POST['delete1']-1 != $key2){
-				fwrite($fp2, $turn2."<>".$column2[1]."<>".$column2[2]."<>".$column2[3]."<>".$column2[4]."<>\n");
-				$turn2++;
-			}
-		}
-		fclose($fp2);
+	//ç¢ºèªç”¨ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ãŒå‰Šé™¤ã—ãŸã„æŠ•ç¨¿ã®ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã¨ä¸€è‡´ã—ãŸå ´åˆ
+	if(trim($_POST['delete_password1']) === trim($check2[4])){
+
+		//å‰Šé™¤ã™ã‚‹ã‹ã®ç¢ºèª
+		echo $check2[0]."ï¼š".$check2[1]."<br/>".$check2[2]."<br/>".$check2[3]."<br/><br/>";
+?>
+		<form method="post">
+		ã“ã®æŠ•ç¨¿ã‚’æœ¬å½“ã«å‰Šé™¤ã—ã¾ã™ã‹ï¼Ÿ<br/>
+		<input type="submit" name="yes2" value="ã¯ã„">
+		<input type="submit" value="ã„ã„ãˆ">
+		<input type="hidden" name="delete2-2" value="<?= $delete2 ?>">
+		</form>
+<?php
 	}else{
 		$error = 1;
 	}
 }
 
 
-//íœ‚Æ•ÒW‚ÅƒpƒXƒ[ƒh‚ªˆê’v‚µ‚È‚¢ê‡‚Ìˆ—
+//å‰Šé™¤ã¨ç·¨é›†ã§ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ãŒä¸€è‡´ã—ãªã„å ´åˆã®å‡¦ç†
 if($error == 1){
-	echo "!!ƒpƒXƒ[ƒh‚ªˆê’v‚µ‚Ü‚¹‚ñ!!"."<br/><br/><br/>";
+	echo "!!ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ãŒä¸€è‡´ã—ã¾ã›ã‚“!!"."<br/><br/><br/>";
 	$error = 0;
 }
 
 
-//•ÒW‚µ‚½“Še‚ğƒtƒ@ƒCƒ‹‚Éã‘‚«
+//æŠ•ç¨¿ã®å‰Šé™¤
+if($_POST['yes2']){
+	$filename2 = 'file.txt';
+	$file2 = file($filename2);
+
+	//å‰Šé™¤æŒ‡å®šã•ã‚ŒãŸæŠ•ç¨¿ã ã‘æŠœã„ã¦ãƒ•ã‚¡ã‚¤ãƒ«ã‚’å†ä¿å­˜
+	$fp2 = fopen($filename2, 'w');
+	$turn2=1;//æŠ•ç¨¿ç•ªå·
+	foreach($file2 as $key2 => $array2){
+		$column2 = explode("<>", $array2);
+		if ($_POST['delete2-2']-1 != $key2){
+			fwrite($fp2, $turn2."<>".$column2[1]."<>".$column2[2]."<>".$column2[3]."<>".$column2[4]."<>\n");
+			$turn2++;
+		}
+	}
+	fclose($fp2);
+}
+
+
+//ç·¨é›†ã—ãŸæŠ•ç¨¿ã‚’ãƒ•ã‚¡ã‚¤ãƒ«ã«ä¸Šæ›¸ã
 if($_POST['edit_mode0'] == 1){
 
-	//ã‘‚«‚³‚ê‚½ƒeƒLƒXƒgƒtƒ@ƒCƒ‹‚ğŒÄ‚Ño‚·
+	//ä¸Šæ›¸ãã•ã‚ŒãŸãƒ†ã‚­ã‚¹ãƒˆãƒ•ã‚¡ã‚¤ãƒ«ã‚’å‘¼ã³å‡ºã™
 	$filename5 = 'file.txt';
 	$file5 = file($filename5);
 	$fp5 = fopen($filename5, 'w');
 
-	//–¼‘O‚Ìİ’è
+	//åå‰ã®è¨­å®š
 	$name5 = $_POST['name0'];
 
-	//ƒRƒƒ“ƒg‚Ìİ’è
+	//ã‚³ãƒ¡ãƒ³ãƒˆã®è¨­å®š
 	$comment5 = $_POST['comment0'];
 
-	//“ŠeŠÔ‚Ìİ’è
+	//æŠ•ç¨¿æ™‚é–“ã®è¨­å®š
 	$time5 = date("Y/m/d H:i:s");
 
-	//ƒpƒXƒ[ƒh‚Ìİ’è
+	//ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã®è¨­å®š
 	$password5 = $_POST['password0'];
 
-	//•ÒWw’è‚³‚ê‚½“Še‚¾‚¯‘‚«Š·‚¦‚Äƒtƒ@ƒCƒ‹‚ğÄ•Û‘¶
+	//ç·¨é›†æŒ‡å®šã•ã‚ŒãŸæŠ•ç¨¿ã ã‘æ›¸ãæ›ãˆã¦ãƒ•ã‚¡ã‚¤ãƒ«ã‚’å†ä¿å­˜
 	foreach($file5 as $array5){
 		$column5 = explode("<>", $array5);
 
-		if ($_POST['edit_num0'] != $column5[0]){//ŒÄ‚Ño‚µ‚½“Še”Ô†‚ª•ÒW”Ô†‚Æˆá‚¤ê‡
-			fwrite($fp5, $column5[0]."<>".$column5[1]."<>".$column5[2]."<>".$column5[3]."<>".$column5[4]."<>\n");//Šù‘¶‚Ì“Še‚ğƒtƒ@ƒCƒ‹‚É“ü‚ê‚é
-		}else{//ŒÄ‚Ño‚µ‚½“Še”Ô†‚ª•ÒW”Ô†‚Æ“¯‚¶ê‡
-			fwrite($fp5, $column5[0]."<>".$name5."<>".$comment5."<>".$time5."<>".$password5."<>\n");//•ÒW‚µ‚½“Še‚ğƒtƒ@ƒCƒ‹‚É“ü‚ê‚é
+		if ($_POST['edit_num0'] != $column5[0]){//å‘¼ã³å‡ºã—ãŸæŠ•ç¨¿ç•ªå·ãŒç·¨é›†ç•ªå·ã¨é•ã†å ´åˆ
+			fwrite($fp5, $column5[0]."<>".$column5[1]."<>".$column5[2]."<>".$column5[3]."<>".$column5[4]."<>\n");//æ—¢å­˜ã®æŠ•ç¨¿ã‚’ãƒ•ã‚¡ã‚¤ãƒ«ã«å…¥ã‚Œã‚‹
+		}else{//å‘¼ã³å‡ºã—ãŸæŠ•ç¨¿ç•ªå·ãŒç·¨é›†ç•ªå·ã¨åŒã˜å ´åˆ
+			fwrite($fp5, $column5[0]."<>".$name5."<>".$comment5."<>".$time5."<>".$password5."<>\n");//ç·¨é›†ã—ãŸæŠ•ç¨¿ã‚’ãƒ•ã‚¡ã‚¤ãƒ«ã«å…¥ã‚Œã‚‹
 		}
 	}
 	fclose($fp5);
-	$edit_mode3 = 0;//“ü—ÍƒtƒH[ƒ€‚ğV‹K“Šeƒ‚[ƒh‚É’¼‚·
+	$edit_mode3 = 0;//å…¥åŠ›ãƒ•ã‚©ãƒ¼ãƒ ã‚’æ–°è¦æŠ•ç¨¿ãƒ¢ãƒ¼ãƒ‰ã«ç›´ã™
 }
 
 
-//Œf¦”Â‚Ì•\¦
-//ã‘‚«‚³‚ê‚½ƒeƒLƒXƒgƒtƒ@ƒCƒ‹‚ğŒÄ‚Ño‚·
+//æ²ç¤ºæ¿ã®è¡¨ç¤º
+//ä¸Šæ›¸ãã•ã‚ŒãŸãƒ†ã‚­ã‚¹ãƒˆãƒ•ã‚¡ã‚¤ãƒ«ã‚’å‘¼ã³å‡ºã™
 $filename4 = 'file.txt';
 $fp4 = fopen($filename4, 'a');
 $file4 = file($filename4);
 
-//Œf¦”Â‚Ì•\¦
+//æ²ç¤ºæ¿ã®è¡¨ç¤º
 foreach($file4 as $array4){
 	$column4 = explode("<>" ,$array4);
-	echo $column4[0]."F".$column4[1]."<br/>".$column4[2]."<br/>".$column4[3]."<br/><br/>";
+	echo $column4[0]."ï¼š".$column4[1]."<br/>".$column4[2]."<br/>".$column4[3]."<br/><br/>";
 }
 
 fclose($fp4);
